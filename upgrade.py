@@ -1,19 +1,20 @@
-# -*- python -*-
-"""This is a template upgrade script.
-
-The purpose is both to cover the most common use-case (updating all modules)
-and to provide an example of how this works.
-"""
+# -*- coding: utf-8 -*-
+from openerp.tools import config
 
 
 def run(session, logger):
     """Update all modules."""
     if session.is_initialization:
-        logger.warn("Usage of upgrade script for initialization detected. "
-                    "You should consider customizing the present upgrade "
-                    "script to add modules install commands. The present "
-                    "script is at : %s (byte-compiled form)",
-                    __file__)
+        config['load_language'] = 'fr_FR'
+        modules = [
+            'zitcom', 'crm'
+        ]
+        session.install_modules(modules)
+        logger.info(
+            "Fresh database ! Installing Zit com - modules: %r",
+            modules
+        )
+        session.env.cr.commit()
         return
     logger.info("Default upgrade procedure : updating all modules.")
     session.update_modules(['all'])
