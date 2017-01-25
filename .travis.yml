@@ -23,17 +23,14 @@ addons:
       - python-serial
       - python-yaml
       - python-pychart
-      - pdftk
-      - imagemagick
       - wkhtmltopdf
       - ttf-dejavu
 
 install:
-  - compare -version
   - python bootstrap.py
   - bin/buildout -c buildout.cfg
   - createdb zitcom
   - bin/upgrade_odoo -d zitcom --init-load-demo-data
 
 script:
-  - bin/nosetests -d zitcom -- -v zitcom-addons/
+  - bin/nosetests -d zitcom -- -v modules/
