@@ -2,6 +2,8 @@ anybox.recipe.odoo/
 .installed.cfg
 bin/
 develop-eggs/
+eggs/
+*~
 etc/
 parts
 upgrade.log
