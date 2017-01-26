@@ -3,7 +3,9 @@ anybox.recipe.odoo/
 bin/
 develop-eggs/
 eggs/
+pgdump/
 *~
+*.pyc
 etc/
 parts
 upgrade.log
