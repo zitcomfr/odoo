@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<!-- VUE RECHERCHE id = référence externe pour appel du record depuis un autre
+	module-->
+    <record id="zitcom_event_search" model="ir.ui.view">
+        <field name="name">Event - Search</field>
+        <field name="model">zitcom.event</field>
+        <field name="arch" type="xml"> 
+        <!-- où et comment chercher depuis le champ de recherche -->
+            <search string="Event Search">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+<!-- VUE LISTE -->
+    <record id="zitcom_event_tree" model="ir.ui.view">
+        <field name="name">zitcom.event.tree</field>
+        <field name="model">zitcom.event</field>
+        <field name="arch" type="xml">
+            <tree string="Events">
+            	<!-- Permet le tri d'objets par glisser/deposer par le
+            	widget handle pour des manips. ou compterments différents
+            	dans l'UI -->
+                <!--field name="sequence" widget="handle"/-->
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+<!-- VUE FORMULAIRE : quand pn clique sur un enregistrement -->
+    <record id="zitcom_event_form" model="ir.ui.view">
+        <field name="name">zitcom.event.form</field>
+        <field name="model">zitcom.event</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+            <form string="Event">
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+<!-- ACTIONS: appels depuis l'UI selon qu'on clique sur tel ou tel menu
+-->
+    <record id="zitcom_event_action" model="ir.actions.act_window">
+        <field name="name">Events</field>
+        <field name="res_model">zitcom.event</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="zitcom_event_tree"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Cliquer ici pour rajouter un nouvel évènement.
+          </p><p>
+            Stages allow salespersons to easily track how a specific opportunity
+            is positioned in the sales cycle.
+          </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="menu_zitcom_event_act"
+        name="Events"
+        sequence="0"
+        action="zitcom_event_action"
+        parent="sales_team.menu_sales"/>
+
+</odoo>

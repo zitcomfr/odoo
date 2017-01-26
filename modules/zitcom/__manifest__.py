@@ -13,8 +13,10 @@
     "installable": True,
     "depends": [
         "base",
+        "sales_team",
     ],
     "data": [
+        "views/zitcom_event_views.xml",
     ],
     "demo": [
     ],
