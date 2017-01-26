@@ -11,4 +11,19 @@ class ZitcomEvent(models.Model):
     # https://www.odoo.com/documentation/10.0/reference/orm.html#fields
     name = fields.Char("title", required=True)
     date = fields.Date("date")
-    
+
+	cote = fields.Selection(
+		selection = [
+			("up", u"Évènement ayant la côte"),
+			("equal", u"Tendance égale"),
+			("down", u"Côte descendante"),
+		],
+		string = "Côte de popularité",
+		compute = "get_cote",
+
+	)
+
+	@api.depends('date')
+	def get_cote(self):
+		for record in self:
+			record.cote = "up"
