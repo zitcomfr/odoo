@@ -2,7 +2,7 @@
 # Copyright <YEAR(S)> <AUTHOR(S)>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import models, fields, api
 
 class ZitcomEvent(models.Model):
     _name = "zitcom.event"
@@ -12,18 +12,21 @@ class ZitcomEvent(models.Model):
     name = fields.Char("title", required=True)
     date = fields.Date("date")
 
-	cote = fields.Selection(
-		selection = [
-			("up", u"Évènement ayant la côte"),
-			("equal", u"Tendance égale"),
-			("down", u"Côte descendante"),
-		],
-		string = "Côte de popularité",
-		compute = "get_cote",
+    cote = fields.Selection(
+        selection = [
+            ("up", u"Évènement ayant la côte"),
+            ("equal", u"Tendance égale"),
+            ("down", u"Côte descendante"),
+        ],
+        string = "Côte de popularité",
+        compute = "get_cote",
 
-	)
+    )
 
-	@api.depends('date')
-	def get_cote(self):
-		for record in self:
-			record.cote = "up"
+    @api.depends('date')
+    def get_cote(self):
+        for record in self:
+            if record.date < '2016-12-31':
+                record.cote = "down"
+            else:
+                record.cote = "up"
