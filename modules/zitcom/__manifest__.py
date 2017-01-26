@@ -13,10 +13,13 @@
     "installable": True,
     "depends": [
         "base",
-        "sales_team",
+        "crm",
+        "l10n_fr",
     ],
     "data": [
         "views/zitcom_event_views.xml",
+        "data/users.xml",
+        "data/company.xml",
     ],
     "demo": [
     ],

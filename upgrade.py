@@ -7,7 +7,7 @@ def run(session, logger):
     if session.is_initialization:
         config['load_language'] = 'fr_FR'
         modules = [
-            'zitcom', 'crm'
+            'zitcom',
         ]
         session.install_modules(modules)
         logger.info(

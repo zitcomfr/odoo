@@ -10,4 +10,5 @@ class ZitcomEvent(models.Model):
     # Attribut name sur chaque objet d'Odoo
     # https://www.odoo.com/documentation/10.0/reference/orm.html#fields
     name = fields.Char("title", required=True)
+    date = fields.Date("date")
     
