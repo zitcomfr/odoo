@@ -8,9 +8,8 @@ class ZitcomEventCase(TransactionCase):
             {'name': "test", 'date': '2016-12-25'}
         )
         self.event2 = self.env['zitcom.event'].create(
-            {'name': "test 2", 'date':'2017-02-01'}
+            {'name': "test 2", 'date': '2017-02-01'}
         )
-
 
     def tearDown(self, *args, **kwargs):
         return super(ZitcomEventCase, self).tearDown(*args, **kwargs)

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-	<!-- VUE RECHERCHE id = référence externe pour appel du record depuis un autre
-	module-->
+    <!-- VUE RECHERCHE id = référence externe pour appel du record depuis un autre
+    module-->
     <record id="zitcom_event_search" model="ir.ui.view">
         <field name="name">Event - Search</field>
         <field name="model">zitcom.event</field>

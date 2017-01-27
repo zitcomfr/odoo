@@ -14,8 +14,9 @@
             <field name="company_ids" eval="[(6, 0,
             [ref('base.main_company')])]"/>
             <field name="groups_id" eval="[(6, 0,
-		[ref('sales_team.group_sale_manager'),
-                                                   ])]"/>
+                [
+                    ref('sales_team.group_sale_manager'),
+                ])]"/>
             <field name="lang">fr_FR</field>
             <field name="tz">Europe/Paris</field>
         </record>

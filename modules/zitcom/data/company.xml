@@ -466,14 +466,8 @@ CEIQhCEIQhCEIQhCEIQhCEIX/9k=
           <field name="name">ZIT.COM</field>
           <field name="rml_header1">Cultivons Notre Art de Ville</field>
           <field name="partner_id" ref="base.main_partner"/>
-          <!--
-                In fact ln10_fr is not yet installed when this file is
-loaded
-                so we choose to set siret manually
-
-                <field name="siret">814 266 433</field>
-          -->
-          <field name="vat">FR05 814 266 433</field>
+          <!--<field name="siret">CHANGE ME</field>-->
+          <!--<field name="vat">CHANGE ME</field>-->
         </record>
 
     </data>
