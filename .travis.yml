@@ -30,6 +30,7 @@ install:
   - python bootstrap.py
   - bin/buildout -c buildout.cfg
   - createdb zitcom
+  - psql zitcom -c "create extension postgis;"
   - bin/upgrade_odoo -d zitcom --init-load-demo-data
 
 script:

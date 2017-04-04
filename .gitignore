@@ -6,6 +6,7 @@ eggs/
 pgdump/
 *~
 *.pyc
+*.dump
 DEADJOE
 etc/
 parts
