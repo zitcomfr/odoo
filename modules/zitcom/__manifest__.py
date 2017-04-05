@@ -19,7 +19,7 @@
         "l10n_fr_base_location_geonames_import",
         "base_location",
         "stock",
-        #"base_geoengine",
+        "geoengine_partner",
     ],
     "data": [
         "views/res_partner_views.xml",
