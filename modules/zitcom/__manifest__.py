@@ -20,6 +20,7 @@
         "base_location",
         "stock",
         "geoengine_partner",
+        "sale",
     ],
     "data": [
         "views/res_partner_views.xml",

@@ -1,4 +1,4 @@
-ZIT.com custom odoo module
+ZIT.COM custom odoo module
 ==========================
 
 
