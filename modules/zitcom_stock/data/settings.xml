@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record model="stock.config.settings" id="setup_warehouse">
+            <field name="warehouse_and_location_usage_level" eval="1"/>
+            <field name="group_stock_adv_location" eval="1"/>
+            <field name="group_stock_multi_locations" eval="1"/>
+            <field name="group_stock_multi_warehouses" eval="1"/>
+        </record>
+
+        <function
+            model="stock.config.settings"
+            name="execute"
+            eval="[[ref('setup_warehouse')]]" />
+    </data>
+</odoo>

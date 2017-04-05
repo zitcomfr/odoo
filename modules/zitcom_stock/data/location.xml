@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="stock.location" id="location_geo">
+        <field name="name">Zone géographique</field>
+        <!-- TODO: We should probably move this location under ZIT.COM
+             wharehouse stock view but as this location is generated we
+             should search it.
+        -->
+        <!--<field name="location_id" ref=""/>-->
+        <field name="usage">view</field>
+    </record>
+
+    <!-- Purpose a special location use mainly as default receipts location -->
+    <record model="stock.location" id="location_receipts">
+        <field name="name">Réceptions (Non dispatché)</field>
+        <field name="location_id" ref="location_geo"/>
+        <field name="usage">internal</field>
+    </record>
+
+    <record model="stock.location" id="location_tours_nord">
+        <field name="name">Tours nord</field>
+        <field name="location_id" ref="location_geo"/>
+        <field name="usage">internal</field>
+    </record>
+
+    <record model="stock.location" id="location_tours_sud">
+        <field name="name">Tours sud</field>
+        <field name="location_id" ref="location_geo"/>
+        <field name="usage">internal</field>
+    </record>
+</odoo>

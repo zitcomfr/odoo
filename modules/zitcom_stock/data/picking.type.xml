@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.sequence" id="sequence_customer_receipts">
+        <field name="name">Réceptions clients</field>
+        <field name="prefix">ZITCOM - REC - </field>
+        <field name="padding" eval="5"/>
+        <field name="number_increment" eval="1"/>
+    </record>
+    <record model="ir.sequence" id="sequence_dispatch">
+        <field name="name">Dispatch</field>
+        <field name="prefix">ZITCOM - DISPATCH - </field>
+        <field name="padding" eval="5"/>
+        <field name="number_increment" eval="1"/>
+    </record>
+
+    <record model="stock.picking.type" id="picking_type_customer_receipts">
+        <field name="name">Réceptions clients</field>
+        <field name="sequence_id" ref="sequence_customer_receipts"/>
+        <field name="warehouse_id" ref="stock.warehouse0"/>
+        <field name="code">incoming</field>
+        <field name="default_location_src_id"
+               ref="stock.stock_location_customers"/>
+        <field name="default_location_dest_id"
+               ref="location_receipts"/>
+    </record>
+
+    <record model="stock.picking.type" id="picking_type_dispatch">
+        <field name="name">Dispatch</field>
+        <field name="sequence_id" ref="sequence_dispatch"/>
+        <field name="warehouse_id" ref="stock.warehouse0"/>
+        <field name="code">internal</field>
+        <field name="default_location_src_id"
+               ref="location_receipts"/>
+        <!-- tours nord will be the default destination for this kind of
+             picking, in fact that will be change by pushed routes -->
+        <field name="default_location_dest_id"
+               ref="location_tours_nord"/>
+    </record>
+
+    <!-- Disable some pre-generated stock.picking.type
+         we could remove it using delete tag -->
+    <record model="stock.picking.type" id="stock.picking_type_in">
+        <field name="active">False</field>
+    </record>
+    <record model="stock.picking.type" id="stock.picking_type_internal">
+        <field name="active">False</field>
+    </record>
+    <record model="stock.picking.type" id="stock.picking_type_out">
+        <field name="active">False</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="stock.warehouse" id="stock.warehouse0">
+        <field name="name">ZIT.COM</field>
+        <field name="code">ZIT</field>
+    </record>
+</odoo>
