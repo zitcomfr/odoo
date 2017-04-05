@@ -27,7 +27,7 @@ addons:
       - ttf-dejavu
 
 install:
-  - python bootstrap.py
+  - python bootstrap.py --setuptools-version=29.0.1
   - bin/buildout -c buildout.cfg
   - createdb zitcom
   - psql zitcom -c "create extension postgis;"
