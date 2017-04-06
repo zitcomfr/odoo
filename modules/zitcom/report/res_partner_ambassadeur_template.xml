@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+<template id="report_partner_ambassadeur_tmpl">
+    <t t-call="report.html_container">
+        <div class="page">
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th class="text-right">adresse</th>
+                    </tr>
+               </thead>
+               <tbody class="sale_tbody">
+
+                    <t t-foreach="docs" t-as="ambassadeur">
+                        <tr>
+                            <td>
+                                <span t-field="ambassadeur.name"/>
+                            </td>
+                            <td>
+                                <span t-field="ambassadeur.city"/>
+                            </td>
+                        </tr>
+                    </t>
+
+                </tbody>
+            </table>
+        </div>
+    </t>
+</template>
+</data>
+</odoo>

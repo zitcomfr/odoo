@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="report_partner_ambassadeur"
+            string="Listing ambassadeur"
+            model="res.partner"
+            report_type="qweb-pdf"
+            name="zitcom.report_partner_ambassadeur_tmpl"
+            file="zitcom.report_partner_ambassadeur_tmpl"/>
+
+    </data>
+</odoo>

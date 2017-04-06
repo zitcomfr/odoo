@@ -27,6 +27,8 @@
         "views/zitcom_event_views.xml",
         "data/users.xml",
         "data/company.xml",
+        "report/res_partner_ambassadeur_template.xml",
+        "report/res_partner_reports.xml",
     ],
     "demo": [
     ],
