@@ -14,6 +14,7 @@
     "installable": True,
     "depends": [
         "base",
+        "sale",
         "stock",
     ],
     "data": [
@@ -22,9 +23,10 @@
         'data/warehouse.xml',
         'data/picking.type.xml',
         'data/route.xml',
+        'views/res_partner.xml',
     ],
     "demo": [
-        # "demo/partner.xml",
-        # "demo/sales.xml",
+        "demo/partner.xml",
+        "demo/sales.xml",
     ],
 }

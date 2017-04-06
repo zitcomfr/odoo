@@ -13,7 +13,9 @@
     </record>
     <record model="stock.location.route" id="route_customer_to_warehouse">
         <field name="name">Client -> ZIT.COM</field>
-        <field name="product_categ_selectable" eval="True"/>
+        <field name="product_categ_selectable" eval="False"/>
+        <field name="product_selectable" eval="False"/>
+        <field name="sale_selectable" eval="False"/>
         <field name="warehouse_selectable" eval="True"/>
         <field name="warehouse_ids" eval="[(6, 0,
                 [
@@ -38,6 +40,9 @@
     <record model="stock.location.route" id="route_recipts_tours_nord">
         <field name="name">Réceptions -> Tours nord</field>
         <field name="sale_selectable" eval="True"/>
+        <field name="product_categ_selectable" eval="False"/>
+        <field name="product_selectable" eval="False"/>
+        <field name="warehouse_selectable" eval="False"/>
         <field name="push_ids" eval="[(6, 0,
                 [
                     ref('push_receipts_tours_nord'),
@@ -55,6 +60,9 @@
     <record model="stock.location.route" id="route_recipts_tours_sud">
         <field name="name">Réceptions -> Tours sud</field>
         <field name="sale_selectable" eval="True"/>
+        <field name="product_categ_selectable" eval="False"/>
+        <field name="product_selectable" eval="False"/>
+        <field name="warehouse_selectable" eval="False"/>
         <field name="push_ids" eval="[(6, 0,
                 [
                     ref('push_receipts_tours_sud'),

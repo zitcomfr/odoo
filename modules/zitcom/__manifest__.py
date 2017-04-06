@@ -18,9 +18,9 @@
         "partner_firstname",
         "l10n_fr_base_location_geonames_import",
         "base_location",
-        "stock",
         "geoengine_partner",
-        "sale",
+        "sale_stock",
+        "zitcom_stock",
     ],
     "data": [
         "views/res_partner_views.xml",

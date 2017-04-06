@@ -12,7 +12,9 @@
 
     <!-- Purpose a special location use mainly as default receipts location -->
     <record model="stock.location" id="location_receipts">
-        <field name="name">Réceptions (Non dispatché)</field>
+        <field name="name">
+            Emplacement client - Réceptions (non dispatché)
+        </field>
         <field name="location_id" ref="location_geo"/>
         <field name="usage">internal</field>
     </record>
