@@ -11,7 +11,7 @@ class ZitcomEvent(models.Model):
     # https://www.odoo.com/documentation/10.0/reference/orm.html#fields
     name = fields.Char("title", required=True)
     date = fields.Date("date")
-
+    lieu = fields.Many2one('zitcom.lieu', 'Lieu')
     cote = fields.Selection(
         selection = [
             ("up", u"Évènement ayant la côte"),
@@ -30,3 +30,9 @@ class ZitcomEvent(models.Model):
                 record.cote = "down"
             else:
                 record.cote = "up"
+
+
+class ZitcomLieu(models.Model):
+    _name = "zitcom.lieu"
+    name = fields.Char("name", required=True)
+    # geo_point = fields.GeoPoint('Addresses coordinate')
