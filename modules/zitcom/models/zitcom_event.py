@@ -13,13 +13,13 @@ class ZitcomEvent(models.Model):
     date = fields.Date("date")
     lieu = fields.Many2one('zitcom.lieu', 'Lieu')
     cote = fields.Selection(
-        selection = [
+        selection=[
             ("up", u"Évènement ayant la côte"),
             ("equal", u"Tendance égale"),
             ("down", u"Côte descendante"),
         ],
-        string = "Côte de popularité",
-        compute = "get_cote",
+        string="Côte de popularité",
+        compute="get_cote",
 
     )
 
