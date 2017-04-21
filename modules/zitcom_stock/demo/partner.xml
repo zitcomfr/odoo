@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record model="res.partner" id="base.res_partner_10">
+    <record model="res.partner" id="res_partner_le_mag">
+        <field name="is_company">1</field>
+        <field name="name">Le Mag</field>
         <field name="property_stock_customer" ref="location_receipts"/>
     </record>
 </odoo>

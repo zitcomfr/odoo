@@ -34,11 +34,11 @@
         <field name="action">move</field>
         <field name="location_from_id" ref="location_receipts"/>
         <field name="location_dest_id" ref="location_tours_nord"/>
-        <field name="auto">transparent</field>
+        <field name="auto">manual</field>
         <field name="picking_type_id" ref="picking_type_dispatch"/>
     </record>
     <record model="stock.location.route" id="route_recipts_tours_nord">
-        <field name="name">Réceptions -> Tours nord</field>
+        <field name="name">Tours nord</field>
         <field name="sale_selectable" eval="True"/>
         <field name="product_categ_selectable" eval="False"/>
         <field name="product_selectable" eval="False"/>
@@ -54,11 +54,11 @@
         <field name="action">move</field>
         <field name="location_from_id" ref="location_receipts"/>
         <field name="location_dest_id" ref="location_tours_sud"/>
-        <field name="auto">transparent</field>
+        <field name="auto">manual</field>
         <field name="picking_type_id" ref="picking_type_dispatch"/>
     </record>
     <record model="stock.location.route" id="route_recipts_tours_sud">
-        <field name="name">Réceptions -> Tours sud</field>
+        <field name="name">Tours sud</field>
         <field name="sale_selectable" eval="True"/>
         <field name="product_categ_selectable" eval="False"/>
         <field name="product_selectable" eval="False"/>
