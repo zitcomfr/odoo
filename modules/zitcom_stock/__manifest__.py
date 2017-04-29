@@ -14,8 +14,7 @@
     "installable": True,
     "depends": [
         "base",
-        "sale",
-        "stock",
+        "sale_stock",
     ],
     "data": [
         'data/settings.xml',
@@ -24,9 +23,15 @@
         'data/picking.type.xml',
         'data/route.xml',
         'views/res_partner.xml',
+        # Les 2 Fichiers suivant devrait-être chargé dans les données de démo
+        # "(cf ci-dessous demo []), on les chages ici pour tester sans être
+        # pollué par les données de démo des autres modules.
+        "demo/partner.xml",
+        "demo/product.xml",
+        "demo/sales.xml",
     ],
     "demo": [
-        "demo/partner.xml",
-        "demo/sales.xml",
+        # "demo/partner.xml",
+        # "demo/sales.xml",
     ],
 }

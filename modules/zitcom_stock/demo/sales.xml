@@ -1,3 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+
+    <record model="sale.order" id="zitcom_stock.sale_order_le_mag">
+        <field name="warehouse_id" eval="ref('stock.warehouse0')"/>
+        <field name="partner_id" ref="res_partner_le_mag"/>
+        <field name="partner_invoice_id" ref="res_partner_le_mag"/>
+        <field name="partner_shipping_id" ref="res_partner_le_mag"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="pricelist_id" ref="product.list0"/>
+        <field name="team_id" ref="sales_team.team_sales_department"/>
+        <field name="date_order"
+               eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"/>
+        <field name="picking_policy">direct</field>
+        <field name="message_partner_ids"
+               eval="[(4, ref('zitcom_stock.res_partner_le_mag'))]"/>
+    </record>
+    <record model="sale.order.line" id="sale_order_le_mag_tn">
+        <field name="name">Le Mag</field>
+        <field name="order_id" ref="sale_order_le_mag"/>
+        <field name="product_id" ref="product_mag_100g"/>
+        <field name="product_uom_qty" eval="200"/>
+        <field name="price_unit" eval="2.5"/>
+        <field name="route_id" ref="route_recipts_tours_nord"/>
+    </record>
+    <record model="sale.order.line" id="sale_order_le_mag_ts">
+        <field name="name">Le Mag</field>
+        <field name="order_id" ref="sale_order_le_mag"/>
+        <field name="product_id" ref="product_mag_100g"/>
+        <field name="product_uom_qty" eval="500"/>
+        <field name="price_unit" eval="2.5"/>
+        <field name="route_id" ref="route_recipts_tours_sud"/>
+    </record>
+
+    <record model="sale.order.line" id="sale_order_flyer_tn">
+        <field name="name">Flyer 10x15</field>
+        <field name="order_id" ref="sale_order_le_mag"/>
+        <field name="product_id" ref="product_flyer_10x15"/>
+        <field name="product_uom_qty" eval="2300"/>
+        <field name="price_unit" eval="0.1"/>
+        <field name="route_id" ref="route_recipts_tours_nord"/>
+    </record>
+    <record model="sale.order.line" id="sale_order_flyer_ts">
+        <field name="name">Flyer 10x15</field>
+        <field name="order_id" ref="sale_order_le_mag"/>
+        <field name="product_id" ref="product_flyer_10x15"/>
+        <field name="product_uom_qty" eval="4400"/>
+        <field name="price_unit" eval="0.1"/>
+        <field name="route_id" ref="route_recipts_tours_sud"/>
+    </record>
+
 </odoo>

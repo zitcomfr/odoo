@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="product_tmpl_flyer_10x15" model="product.template">
+      <field name="name">Flyer 10x15</field>
+      <field name="type">product</field>
+      <field name="uom_id" ref="product.product_uom_unit"/>
+      <field name="uom_po_id" ref="product.product_uom_unit"/>
+      <field name="description"></field>
+      <field name="description_sale"></field>
+    </record>
+    <record id="product_flyer_10x15" model="product.product">
+      <field name="product_tmpl_id" ref="product_tmpl_flyer_10x15"/>
+      <field name="default_code">FLY-10x15</field>
+    </record>
+
+    <record id="product_tmpl_mag_100g" model="product.template">
+      <field name="name">Magazine &lt;100g</field>
+      <field name="type">product</field>
+      <field name="uom_id" ref="product.product_uom_unit"/>
+      <field name="uom_po_id" ref="product.product_uom_unit"/>
+      <field name="description"></field>
+      <field name="description_sale"></field>
+    </record>
+    <record id="product_mag_100g" model="product.product">
+      <field name="product_tmpl_id" ref="product_tmpl_mag_100g"/>
+      <field name="default_code">MAG-100</field>
+    </record>
+
+</odoo>
